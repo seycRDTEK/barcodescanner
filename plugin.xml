@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
+	id="cordova-plugin-barCode-scanner"
+	version="0.6.1">
+
+	<name>BarCodeScanner</name>
+	<description>Bar Code Scanner Plugin</description>
+	<license>EYC</license>
+	<keywords>barcodescanner</keywords>
+
+	<js-module src="www/barcodescanner.js">
+		<clobbers target="plugins.barcodescanner" />
+	</js-module>
+
+
+	<!-- android -->
+	<platform name="android">
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="barcodescanner" >
+				<param name="android-package" value="com.eyc.plugins.BarcodeScanner"/>
+			</feature>
+		</config-file>
+
+		<source-file src="src/android/BarcodeScanner.java" target-dir="src/com/eyc/plugins/BarcodeScanner" />
+	</platform>
+</plugin>
